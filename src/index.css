@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Noto";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #8c1f7f;
+  background-color: #00847b;
+  background-image: linear-gradient(to bottom left, #8c1f7f, #00847b);
+  color: #f3dddd;
+  font-size: 22px;
+  letter-spacing: 0.8px;
+  line-height: 1.5;
+  min-height: 100vh;
+
+}
+
+code {
+  font-family:
+    source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+h1 {
+  font-weight: 300;
+}
+h2 {
+  font-weight: 150;
+}
+img {
+  border-radius: 26px;
+}
+
+.weather-conatiner{
+  margin: 2rem 5rem;
+}
+
+.current-info{
+  margin-bottom: 3rem;
+  background-image: linear-gradient(to right, #5dafc5d6, transparent);
+  padding:1px 0px 1px 50px;
+}
+
+.current-temp{
+  display: flex;
+  gap: 5rem
+}
+
+.current-temp img{
+  border-radius: 50%;
+}
+
+.hourly-weather{
+  display: flex;
+  gap: 3rem;
+}
+
+.hourly-weather img{
+  border-radius: 50%;
+}
+
+.predicted-weather{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9rem;
+  row-gap:4rem;
+}
+
+.time-wise{
+  background-image: linear-gradient(268deg, #000000a8, #9d040400);
+}
