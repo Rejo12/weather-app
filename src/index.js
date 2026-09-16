@@ -4,13 +4,22 @@ import './index.css';
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import NotFound from './components/NotFound';
 import Weather from './components/Weather';
+import SignIn from './components/SignIn';
+import SignUp from './components/SignUp';
+import PublicRoutes from './routes/PublicRoutes';
+import ProtectedRoute from './routes/ProtectedRoute';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Weather/>} />
+      <Route path="/" element={<PublicRoutes><SignIn/></PublicRoutes>} />
+      {/* <Route path="/" element={<SignIn/>} /> */}
+      <Route path="/signup" element={<SignUp/>} />
+      <Route element={<ProtectedRoute/>}>
+      <Route path="/dashboard" element={<Weather/>}/>
+      </Route>
       <Route path="*" element={<NotFound/>} />
     {/* <AppRoutes />
     <NotFound /> */}

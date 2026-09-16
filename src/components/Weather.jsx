@@ -4,7 +4,7 @@ import useFetchWeather from './useFetchWeather'
 
 
 const Weather = () => {
-    const [weatherInfo,fetchWeather] = useFetchWeather()
+    const [weatherInfo,fetchWeather,isFetching] = useFetchWeather()
 
     console.log(weatherInfo,fetchWeather)
 
@@ -25,8 +25,12 @@ const Weather = () => {
         }
     }
 
+    if(isFetching){
+        return <h2>Welcome to Weather app</h2>
+    }
+
     return (
-        <div className='weather-conatiner'>
+        <div className=''>
             <h2>Weather Info</h2>
 
             <div className="">

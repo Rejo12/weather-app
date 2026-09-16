@@ -66,3 +66,90 @@ img {
 .time-wise{
   background-image: linear-gradient(268deg, #000000a8, #9d040400);
 }
+
+.sign-in-conatiner{
+  height:100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-in-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border:2px solid transparent;
+  box-shadow: 0px 0px 11px 3px #b2adefd1;
+  gap:1rem;
+  padding: 3rem 8rem;
+  background-color: #fff;
+  color: black;
+  width: 20vw;
+}
+
+input[type="email"], input[type="password"]{
+  width: 90%;
+  height: 2rem;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+input[type="email"]:focus, input[type="password"]:focus{
+  border:   blue;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+}    
+
+button{
+  border: none;
+  width: 6rem;
+  height: 40px;
+  background-color: #ff2eff82;
+  cursor: pointer;
+
+}
+
+button:hover{
+  background-color: #ce0ece82;
+}
+
+.sign-up-link{
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}    
+
+.error-class{
+  border: 2px solid #ff00009e;
+  box-shadow: 0px 0px 4px 0px #ff000061;
+
+}
+
+.error-msg{
+  font-size: 15px;
+  margin-bottom: 0px;
+  color: red;
+  margin-top: -10px;
+}
+
+label{
+  font-size: 18px;
+  /* display: block; */
+  /* text-align: center; */
+}
+
+.flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ml-auto{
+  margin-left: auto;
+}
+
+.sign-up-elements{
+  display: flex;
+  flex-direction: column;
+}

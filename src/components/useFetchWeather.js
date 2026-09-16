@@ -1,18 +1,25 @@
-import React,{useState,useEffect} from 'react'
+import { useState, useEffect } from "react";
 
-const useFetchWeather=()=>{
-        const [weatherInfo, setWeatherInfo] = useState(null)
+const useFetchWeather = () => {
+  const [weatherInfo, setWeatherInfo] = useState(null);
+  const [isFetching, setIsFetching] = useState(false);
 
-             const fetchWeather = async () => {
-                const response = await fetch("https://wttr.in/?format=j1")
-                const data = await response.json()
-                setWeatherInfo(data)
-            }
-    
-        useEffect(() => {
-          fetchWeather()
-        }, [])
-        return [weatherInfo,fetchWeather]
+  const fetchWeather = async () => {
+    try {
+      setIsFetching(true);
+      const response = await fetch("https://wttr.in/?format=j1");
+      const data = await response.json();
+      setWeatherInfo(data);
+    } catch (e) {
+    } finally {
+      setIsFetching(false);
     }
+  };
 
-    export default useFetchWeather
+  useEffect(() => {
+    fetchWeather();
+  }, []);
+  return [weatherInfo, fetchWeather, isFetching];
+};
+
+export default useFetchWeather;
