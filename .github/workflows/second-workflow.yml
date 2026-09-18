@@ -1,15 +1,17 @@
-name: Second Workfkflow
-on: push
+name: Second Workflow
+on:
+ push:
+ workflow_dispatch:
 jobs:
     weather-app-start-job:
       runs-on: ubuntu-latest
       steps:
        - name: "welcome"
-         run: echo "Welcome to the weather-app. Starting the worklfow job"
+         run: echo "Welcome to the weather-app. Starting the workflow job"
 
     weather-app-end-job:
       runs-on: ubuntu-latest
       steps:
       - name: "bye"
-        run: echo "Heelo user. closing the workflow job"
+        run: echo "Hello user. closing the workflow job"
 
