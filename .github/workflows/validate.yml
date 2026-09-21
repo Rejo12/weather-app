@@ -11,4 +11,7 @@ jobs:
     - name: validate html file
       run: test -f public/index.html
 
+    - name: validate js file
+      run : test -f src/index.js
+
 
