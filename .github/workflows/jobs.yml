@@ -22,4 +22,19 @@ jobs:
       - name: validate js file
         run: test -f src/index.js   
 
+
+    validate-code:
+      needs: [validate-html-file,validate-js-file]
+      runs-on: ubuntu-latest  
+
+      steps:
+      - name: get repo code
+        uses: actions/checkout@v4
+
+      - name: check js code  
+        run: node --check src/index.js
+
+      - name: check html code
+        run: npx htmlhint public/index.html  
+
        
