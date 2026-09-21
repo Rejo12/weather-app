@@ -1,0 +1,25 @@
+name: Jobs test
+on: push
+jobs:
+    validate-html-file:
+      runs-on: ubuntu-latest
+
+      steps:
+      - name: get repo code
+        uses: actions/checkout@v4
+
+      - name: validate html file
+        run  : test-f public/index.html
+
+
+    validate-js-file:
+      runs-on: ubuntu-latest
+
+      steps:
+      - name: get repo code
+        uses: actions/checkout@v4   
+
+      - name: validate js file
+        run: test -f src/index.js   
+
+       
