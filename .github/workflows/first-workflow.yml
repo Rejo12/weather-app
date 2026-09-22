@@ -8,7 +8,7 @@ jobs:
         run: echo "Hello this is the first workflow in github actions"
       - name: Bye Github Actions
         run: echo "Bye github actions"
-      - name: Intentionally failing
-        run: exit 1  
+      # - name: Intentionally failing
+      #   run: exit 1  
         
       
