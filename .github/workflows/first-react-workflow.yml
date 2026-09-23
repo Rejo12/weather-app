@@ -1,5 +1,7 @@
 name: First React Workflow
-on: push
+on:
+ push:
+ pull_request:
 jobs:
   install-dependencies-create-build:
     runs-on: ubuntu-latest
