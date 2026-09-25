@@ -18,5 +18,8 @@ jobs:
       - name: install dependencies
         run: npm install
 
+      - name: running eslint
+        run: npx eslint src
+
       - name: create build
         run: CI=false npm run build       
