@@ -5,7 +5,7 @@ on:
   branches:
     - main
 jobs:
-  install-dependencies-create-build:
+  install-dependencies:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,6 +21,44 @@ jobs:
       - name: running eslint
         run: npx eslint src
 
+
+  run-eslint:
+    runs-on: ubuntu-latest
+
+    steps:
+
+     - name: checkout code
+       uses: actions/checkout@v4
+
+     - name: install node in vm
+       uses:  actions/setup-node@v4
+       with:
+        node-version: 24
+        npm-cache: true
+
+     - name: install dependency
+       run: npm ci
+
+     - name: run eslint
+       run: npx eslint src
+
+  create-build:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: checkout code
+        uses: actions/checkout@v4     
+
+      - name: install node in vm
+        uses:  actions/setup-node@v4
+        with:
+          node-version: 24
+          npm-cache: true   
+
+      - name: install dependency
+        run: npm ci    
+
       - name: create build
         run: CI=false npm run build   
 
@@ -30,4 +68,5 @@ jobs:
             name: react-build
             path: build/
             retention-days: 7
+
 
