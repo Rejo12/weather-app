@@ -37,7 +37,7 @@ jobs:
         npm-cache: true
 
      - name: install dependency
-       run: npm ci
+       run: npm install
 
      - name: run eslint
        run: npx eslint src
@@ -57,7 +57,7 @@ jobs:
           npm-cache: true   
 
       - name: install dependency
-        run: npm ci    
+        run: npm install    
 
       - name: create build
         run: CI=false npm run build   
