@@ -4,7 +4,7 @@ import { useEffect } from "react"
 import useStorage from "../hooks/useStorage"
 
 
-const ProtectedRoute=({})=>{
+const ProtectedRoute=()=>{
     const navigate = useNavigate()
     const {removeToken,checkIsAuthenticated} = useAuthenticated()
     const {loggedInUser,clearUserData,fetchUserData} = useStorage()
