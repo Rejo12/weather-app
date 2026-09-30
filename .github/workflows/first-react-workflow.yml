@@ -70,4 +70,19 @@ jobs:
             path: build/
             retention-days: 7
 
+  deploy-job:
+    needs: [install-dependencies,run-eslint,create-build]
+    runs-on: ubuntu-latest 
+
+    steps:         
+
+      - name: checkout code
+        uses: actions/checkout@v4      
+
+      - name: install vercel cli
+        run: npm install --global vercel
+
+      - name: deployment on vercel
+        run: vercel --prod --yes --token="${{secrets.VERCEL_TOKEN}}"       
+
 
