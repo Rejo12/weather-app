@@ -1,5 +1,5 @@
 
-import {Outlet} from 'react-router-dom'
+// import {Outlet} from 'react-router-dom'
 
 const PublicRoutes=({children})=>{
     console.log("5")

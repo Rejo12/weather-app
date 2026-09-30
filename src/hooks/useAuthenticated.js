@@ -21,7 +21,7 @@ const removeToken=()=>{
 
 const checkIsAuthenticated=()=>{
     console.log(JSON.parse(localStorage.getItem("authToken")) , new Date().getTime())
-    // setIsAuthenticated(token > new Date().getTime())
+    setIsAuthenticated(true)
     return (JSON.parse(localStorage.getItem("authToken")) > new Date().getTime())
 }
 

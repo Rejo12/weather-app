@@ -2,7 +2,6 @@ import {useState, useRef} from 'react'
 import { useNavigate } from 'react-router-dom'
 import userCredentails from './UserCredentials.json' with {type:"json"}
 import useAuthenticated from '../hooks/useAuthenticated'
-import logo from '../logo.jpg'
 import useStorage from '../hooks/useStorage'
 
 const SignIn=()=>{
@@ -12,7 +11,7 @@ const SignIn=()=>{
     const userIdRef = useRef(null)
     const passwordRef = useRef(null)
     const navigate = useNavigate()
-    const {token,fetchToken,saveToken,removeToken,isAuthenticated,checkIsAuthenticated} = useAuthenticated()
+    const {saveToken} = useAuthenticated()
     const {saveUserData} = useStorage()
 
     const handleSignIn=()=>{
@@ -24,7 +23,7 @@ const SignIn=()=>{
             navigate('/dashboard')
         }
         else setIsError(true)    
-        if(userId.length == 0)
+        if(userId.length === 0)
             userIdRef.current.classList.add('error-class')
         if(password.length === 0)
             passwordRef.current.classList.add('error-class')
