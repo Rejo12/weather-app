@@ -46,6 +46,10 @@ jobs:
     needs: [install-dependencies,run-eslint]
     runs-on: ubuntu-latest
 
+    env:
+      VERCEL_PROJECT_ID: "${{secrets.VERCEL_PROJECT_ID}}"
+      VERCEL_TEAM_ID: "${{secrets.VERCEL_TEAM_ID}}"
+
     steps:
 
       - name: checkout code
@@ -70,24 +74,26 @@ jobs:
             path: build/
             retention-days: 7
 
-  deploy-job:
-    needs: [install-dependencies,run-eslint,create-build]
-    runs-on: ubuntu-latest 
-
-    steps:         
-
-      - name: checkout code
-        uses: actions/checkout@v4      
-
-      - name: Download build artifact
-        uses: actions/download-artifact@v5
-        with:
-          name: react-build
-
       - name: install vercel cli
         run: npm install --global vercel
 
       - name: deployment on vercel
-        run: vercel --prod --yes --token="${{secrets.VERCEL_TOKEN}}"       
+        run: vercel deploy build--prod --yes --token="${{secrets.VERCEL_TOKEN}}"       
+
+  # deploy-job:
+  #   needs: [install-dependencies,run-eslint,create-build]
+  #   runs-on: ubuntu-latest 
+
+  #   steps:         
+
+  #     - name: checkout code
+  #       uses: actions/checkout@v4      
+
+  #     - name: Download build artifact
+  #       uses: actions/download-artifact@v5
+  #       with:
+  #         name: react-build
+
+           
 
 
